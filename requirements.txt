@@ -1,0 +1,5 @@
+Flask==2.1.2
+matplotlib==3.5.2
+Pillow==9.2.0
+PyDub==0.25.1
+ffmpeg-python==0.2.0

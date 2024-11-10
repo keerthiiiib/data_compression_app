@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Compression Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>File Compression Tool</h1>
+        <form action="/compress" method="post" enctype="multipart/form-data">
+            <label for="file">Choose a file to compress:</label>
+            <input type="file" name="file" id="file" required>
+            <button type="submit">Compress</button>
+        </form>
+
+        {% if chart_img_path %}
+        <h2>Compression Visualization:</h2>
+        <img src="{{ url_for('static', filename='compression_chart.png') }}" alt="Compression Visualization">
+        <br>
+        <a href="{{ url_for('download_file', filename=compressed_file_path) }}" download>Download Compressed File</a>
+        {% endif %}
+    </div>
+</body>
+</html>
